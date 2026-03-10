@@ -1,0 +1,76 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="Eslint" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="55">
+            <item index="0" class="java.lang.String" itemvalue="pytest-base-url" />
+            <item index="1" class="java.lang.String" itemvalue="pytest-playwright" />
+            <item index="2" class="java.lang.String" itemvalue="greenlet" />
+            <item index="3" class="java.lang.String" itemvalue="pluggy" />
+            <item index="4" class="java.lang.String" itemvalue="python-dateutil" />
+            <item index="5" class="java.lang.String" itemvalue="python-slugify" />
+            <item index="6" class="java.lang.String" itemvalue="requests" />
+            <item index="7" class="java.lang.String" itemvalue="exceptiongroup" />
+            <item index="8" class="java.lang.String" itemvalue="pymysql" />
+            <item index="9" class="java.lang.String" itemvalue="playwright" />
+            <item index="10" class="java.lang.String" itemvalue="certifi" />
+            <item index="11" class="java.lang.String" itemvalue="tomli" />
+            <item index="12" class="java.lang.String" itemvalue="urllib3" />
+            <item index="13" class="java.lang.String" itemvalue="backports-asyncio-runner" />
+            <item index="14" class="java.lang.String" itemvalue="pyee" />
+            <item index="15" class="java.lang.String" itemvalue="pygments" />
+            <item index="16" class="java.lang.String" itemvalue="six" />
+            <item index="17" class="java.lang.String" itemvalue="pytest" />
+            <item index="18" class="java.lang.String" itemvalue="iniconfig" />
+            <item index="19" class="java.lang.String" itemvalue="text-unidecode" />
+            <item index="20" class="java.lang.String" itemvalue="packaging" />
+            <item index="21" class="java.lang.String" itemvalue="typing-extensions" />
+            <item index="22" class="java.lang.String" itemvalue="allure-pytest" />
+            <item index="23" class="java.lang.String" itemvalue="et-xmlfile" />
+            <item index="24" class="java.lang.String" itemvalue="pytest-asyncio" />
+            <item index="25" class="java.lang.String" itemvalue="attrs" />
+            <item index="26" class="java.lang.String" itemvalue="colorama" />
+            <item index="27" class="java.lang.String" itemvalue="faker" />
+            <item index="28" class="java.lang.String" itemvalue="charset-normalizer" />
+            <item index="29" class="java.lang.String" itemvalue="pillow" />
+            <item index="30" class="java.lang.String" itemvalue="allure-python-commons" />
+            <item index="31" class="java.lang.String" itemvalue="idna" />
+            <item index="32" class="java.lang.String" itemvalue="openpyxl" />
+            <item index="33" class="java.lang.String" itemvalue="pip" />
+            <item index="34" class="java.lang.String" itemvalue="jinja2" />
+            <item index="35" class="java.lang.String" itemvalue="pytest-metadata" />
+            <item index="36" class="java.lang.String" itemvalue="pytest-order" />
+            <item index="37" class="java.lang.String" itemvalue="crcmod" />
+            <item index="38" class="java.lang.String" itemvalue="pytest-html" />
+            <item index="39" class="java.lang.String" itemvalue="setuptools" />
+            <item index="40" class="java.lang.String" itemvalue="xmltodict" />
+            <item index="41" class="java.lang.String" itemvalue="pycryptodome" />
+            <item index="42" class="java.lang.String" itemvalue="cos-python-sdk-v5" />
+            <item index="43" class="java.lang.String" itemvalue="markupsafe" />
+            <item index="44" class="java.lang.String" itemvalue="backports.asyncio.runner" />
+            <item index="45" class="java.lang.String" itemvalue="cos_python_sdk_v5" />
+            <item index="46" class="java.lang.String" itemvalue="execnet" />
+            <item index="47" class="java.lang.String" itemvalue="Faker" />
+            <item index="48" class="java.lang.String" itemvalue="Pygments" />
+            <item index="49" class="java.lang.String" itemvalue="typing_extensions" />
+            <item index="50" class="java.lang.String" itemvalue="et_xmlfile" />
+            <item index="51" class="java.lang.String" itemvalue="pytest-xdist" />
+            <item index="52" class="java.lang.String" itemvalue="MarkupSafe" />
+            <item index="53" class="java.lang.String" itemvalue="PyMySQL" />
+            <item index="54" class="java.lang.String" itemvalue="Jinja2" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="N801" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
