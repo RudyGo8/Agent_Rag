@@ -1,0 +1,317 @@
+2026-03-20 15:16:34,666 - agent - ERROR - file_handler.py - 40 - [listdir_with_allowed_type]data不是文件夹
+2026-03-20 15:16:34,666 - agent - ERROR - file_handler.py - 17 - [md5计算]文件txt不存在
+2026-03-20 15:16:34,666 - agent - ERROR - vector_store.py - 103 - [加载知识库] txt处理失败: Error loading txt
+Traceback (most recent call last):
+  File "F:\AI_Models\DEMO\Agent_rag1\venv\Lib\site-packages\langchain_community\document_loaders\text.py", line 42, in lazy_load
+    with open(self.file_path, encoding=self.encoding) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'txt'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\rag\vector_store.py", line 84, in load_document
+    documents: list[Document] = get_file_documents(path)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\rag\vector_store.py", line 63, in get_file_documents
+    return txt_loader(read_path)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\utils\file_handler.py", line 55, in txt_loader
+    return TextLoader(filepath).load()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\AI_Models\DEMO\Agent_rag1\venv\Lib\site-packages\langchain_core\document_loaders\base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\AI_Models\DEMO\Agent_rag1\venv\Lib\site-packages\langchain_community\document_loaders\text.py", line 58, in lazy_load
+    raise RuntimeError(f"Error loading {self.file_path}") from e
+RuntimeError: Error loading txt
+2026-03-20 15:16:34,669 - agent - ERROR - file_handler.py - 17 - [md5计算]文件pdf不存在
+2026-03-20 15:16:34,669 - agent - ERROR - vector_store.py - 103 - [加载知识库] pdf处理失败: File path pdf is not a valid file or url
+Traceback (most recent call last):
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\rag\vector_store.py", line 84, in load_document
+    documents: list[Document] = get_file_documents(path)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\rag\vector_store.py", line 66, in get_file_documents
+    return pdf_loader(read_path)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\utils\file_handler.py", line 51, in pdf_loader
+    return PyPDFLoader(filepath, passwd).load()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\AI_Models\DEMO\Agent_rag1\venv\Lib\site-packages\langchain_community\document_loaders\pdf.py", line 281, in __init__
+    super().__init__(file_path, headers=headers)
+  File "F:\AI_Models\DEMO\Agent_rag1\venv\Lib\site-packages\langchain_community\document_loaders\pdf.py", line 140, in __init__
+    raise ValueError("File path %s is not a valid file or url" % self.file_path)
+ValueError: File path pdf is not a valid file or url
+2026-03-20 15:22:40,555 - agent - ERROR - vector_store.py - 103 - [加载知识库] F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\扫地机器人100问.pdf处理失败: 'EmbeddingsFactory' object has no attribute 'embed_documents'
+Traceback (most recent call last):
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\rag\vector_store.py", line 96, in load_document
+    self.vector_store.add_documents(split_document)
+  File "F:\AI_Models\DEMO\Agent_rag1\venv\Lib\site-packages\langchain_core\vectorstores\base.py", line 258, in add_documents
+    return self.add_texts(texts, metadatas, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\AI_Models\DEMO\Agent_rag1\venv\Lib\site-packages\langchain_chroma\vectorstores.py", line 627, in add_texts
+    embeddings = self._embedding_function.embed_documents(texts)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'EmbeddingsFactory' object has no attribute 'embed_documents'
+2026-03-20 15:22:40,557 - agent - ERROR - vector_store.py - 103 - [加载知识库] F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\扫地机器人100问2.txt处理失败: Error loading F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\扫地机器人100问2.txt
+Traceback (most recent call last):
+  File "F:\AI_Models\DEMO\Agent_rag1\venv\Lib\site-packages\langchain_community\document_loaders\text.py", line 43, in lazy_load
+    text = f.read()
+           ^^^^^^^^
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xab in position 4: illegal multibyte sequence
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\rag\vector_store.py", line 84, in load_document
+    documents: list[Document] = get_file_documents(path)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\rag\vector_store.py", line 63, in get_file_documents
+    return txt_loader(read_path)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\utils\file_handler.py", line 55, in txt_loader
+    return TextLoader(filepath).load()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\AI_Models\DEMO\Agent_rag1\venv\Lib\site-packages\langchain_core\document_loaders\base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\AI_Models\DEMO\Agent_rag1\venv\Lib\site-packages\langchain_community\document_loaders\text.py", line 56, in lazy_load
+    raise RuntimeError(f"Error loading {self.file_path}") from e
+RuntimeError: Error loading F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\扫地机器人100问2.txt
+2026-03-20 15:22:40,558 - agent - ERROR - vector_store.py - 103 - [加载知识库] F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\扫拖一体机器人100问.txt处理失败: Error loading F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\扫拖一体机器人100问.txt
+Traceback (most recent call last):
+  File "F:\AI_Models\DEMO\Agent_rag1\venv\Lib\site-packages\langchain_community\document_loaders\text.py", line 43, in lazy_load
+    text = f.read()
+           ^^^^^^^^
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xab in position 4: illegal multibyte sequence
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\rag\vector_store.py", line 84, in load_document
+    documents: list[Document] = get_file_documents(path)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\rag\vector_store.py", line 63, in get_file_documents
+    return txt_loader(read_path)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\utils\file_handler.py", line 55, in txt_loader
+    return TextLoader(filepath).load()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\AI_Models\DEMO\Agent_rag1\venv\Lib\site-packages\langchain_core\document_loaders\base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\AI_Models\DEMO\Agent_rag1\venv\Lib\site-packages\langchain_community\document_loaders\text.py", line 56, in lazy_load
+    raise RuntimeError(f"Error loading {self.file_path}") from e
+RuntimeError: Error loading F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\扫拖一体机器人100问.txt
+2026-03-20 15:22:40,559 - agent - ERROR - vector_store.py - 103 - [加载知识库] F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\故障排除.txt处理失败: Error loading F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\故障排除.txt
+Traceback (most recent call last):
+  File "F:\AI_Models\DEMO\Agent_rag1\venv\Lib\site-packages\langchain_community\document_loaders\text.py", line 43, in lazy_load
+    text = f.read()
+           ^^^^^^^^
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xab in position 2: illegal multibyte sequence
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\rag\vector_store.py", line 84, in load_document
+    documents: list[Document] = get_file_documents(path)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\rag\vector_store.py", line 63, in get_file_documents
+    return txt_loader(read_path)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\utils\file_handler.py", line 55, in txt_loader
+    return TextLoader(filepath).load()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\AI_Models\DEMO\Agent_rag1\venv\Lib\site-packages\langchain_core\document_loaders\base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\AI_Models\DEMO\Agent_rag1\venv\Lib\site-packages\langchain_community\document_loaders\text.py", line 56, in lazy_load
+    raise RuntimeError(f"Error loading {self.file_path}") from e
+RuntimeError: Error loading F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\故障排除.txt
+2026-03-20 15:22:40,564 - agent - ERROR - vector_store.py - 103 - [加载知识库] F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\维护保养.txt处理失败: Error loading F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\维护保养.txt
+Traceback (most recent call last):
+  File "F:\AI_Models\DEMO\Agent_rag1\venv\Lib\site-packages\langchain_community\document_loaders\text.py", line 43, in lazy_load
+    text = f.read()
+           ^^^^^^^^
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xab in position 4: illegal multibyte sequence
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\rag\vector_store.py", line 84, in load_document
+    documents: list[Document] = get_file_documents(path)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\rag\vector_store.py", line 63, in get_file_documents
+    return txt_loader(read_path)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\utils\file_handler.py", line 55, in txt_loader
+    return TextLoader(filepath).load()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\AI_Models\DEMO\Agent_rag1\venv\Lib\site-packages\langchain_core\document_loaders\base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\AI_Models\DEMO\Agent_rag1\venv\Lib\site-packages\langchain_community\document_loaders\text.py", line 56, in lazy_load
+    raise RuntimeError(f"Error loading {self.file_path}") from e
+RuntimeError: Error loading F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\维护保养.txt
+2026-03-20 15:22:40,565 - agent - ERROR - vector_store.py - 103 - [加载知识库] F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\选购指南.txt处理失败: Error loading F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\选购指南.txt
+Traceback (most recent call last):
+  File "F:\AI_Models\DEMO\Agent_rag1\venv\Lib\site-packages\langchain_community\document_loaders\text.py", line 43, in lazy_load
+    text = f.read()
+           ^^^^^^^^
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xab in position 2: illegal multibyte sequence
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\rag\vector_store.py", line 84, in load_document
+    documents: list[Document] = get_file_documents(path)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\rag\vector_store.py", line 63, in get_file_documents
+    return txt_loader(read_path)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\utils\file_handler.py", line 55, in txt_loader
+    return TextLoader(filepath).load()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\AI_Models\DEMO\Agent_rag1\venv\Lib\site-packages\langchain_core\document_loaders\base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\AI_Models\DEMO\Agent_rag1\venv\Lib\site-packages\langchain_community\document_loaders\text.py", line 56, in lazy_load
+    raise RuntimeError(f"Error loading {self.file_path}") from e
+RuntimeError: Error loading F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\选购指南.txt
+2026-03-20 15:36:30,319 - agent - ERROR - vector_store.py - 103 - [加载知识库] F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\扫地机器人100问.pdf处理失败: unsupported operand type(s) for +: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\rag\vector_store.py", line 99, in load_document
+    save_md5_hex(md5_hex)
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\rag\vector_store.py", line 59, in save_md5_hex
+    f.write(md5_for_check + '\n')
+            ~~~~~~~~~~~~~~^~~~~~
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+2026-03-20 15:37:05,694 - agent - ERROR - vector_store.py - 103 - [加载知识库] F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\扫地机器人100问2.txt处理失败: unsupported operand type(s) for +: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\rag\vector_store.py", line 99, in load_document
+    save_md5_hex(md5_hex)
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\rag\vector_store.py", line 59, in save_md5_hex
+    f.write(md5_for_check + '\n')
+            ~~~~~~~~~~~~~~^~~~~~
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+2026-03-20 15:37:50,604 - agent - ERROR - vector_store.py - 103 - [加载知识库] F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\扫拖一体机器人100问.txt处理失败: unsupported operand type(s) for +: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\rag\vector_store.py", line 99, in load_document
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\rag\vector_store.py", line 59, in save_md5_hex
+    f.write(md5_for_check + '\n')
+            ~~~~~~~~~~~~~~^~~~~~
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+2026-03-20 15:38:34,303 - agent - WARNING - vector_store.py - 78 - [加载知识库] F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\扫地机器人100问.pdf无法计算MD5，跳过
+2026-03-20 15:38:34,303 - agent - WARNING - vector_store.py - 78 - [加载知识库] F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\扫地机器人100问2.txt无法计算MD5，跳过
+2026-03-20 15:38:34,304 - agent - WARNING - vector_store.py - 78 - [加载知识库] F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\扫拖一体机器人100问.txt无法计算MD5，跳过
+2026-03-20 15:38:34,304 - agent - WARNING - vector_store.py - 78 - [加载知识库] F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\故障排除.txt无法计算MD5，跳过
+2026-03-20 15:38:34,304 - agent - WARNING - vector_store.py - 78 - [加载知识库] F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\维护保养.txt无法计算MD5，跳过
+2026-03-20 15:38:34,304 - agent - WARNING - vector_store.py - 78 - [加载知识库] F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\选购指南.txt无法计算MD5，跳过
+2026-03-20 15:40:49,344 - agent - ERROR - vector_store.py - 105 - [加载知识库] F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\扫地机器人100问.pdf处理失败: unsupported operand type(s) for +: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\rag\vector_store.py", line 101, in load_document
+    save_md5_hex(md5_hex)
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\rag\vector_store.py", line 59, in save_md5_hex
+    f.write(md5_for_check + '\n')
+            ~~~~~~~~~~~~~~^~~~~~
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+2026-03-20 15:41:26,265 - agent - ERROR - vector_store.py - 105 - [加载知识库] F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\扫地机器人100问2.txt处理失败: unsupported operand type(s) for +: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\rag\vector_store.py", line 101, in load_document
+    save_md5_hex(md5_hex)
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\rag\vector_store.py", line 59, in save_md5_hex
+    f.write(md5_for_check + '\n')
+            ~~~~~~~~~~~~~~^~~~~~
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+2026-03-20 15:42:12,074 - agent - ERROR - vector_store.py - 105 - [加载知识库] F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\扫拖一体机器人100问.txt处理失败: unsupported operand type(s) for +: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\rag\vector_store.py", line 101, in load_document
+    save_md5_hex(md5_hex)
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\rag\vector_store.py", line 59, in save_md5_hex
+    f.write(md5_for_check + '\n')
+            ~~~~~~~~~~~~~~^~~~~~
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+2026-03-20 15:43:31,254 - agent - ERROR - vector_store.py - 105 - [加载知识库] F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\故障排除.txt处理失败: unsupported operand type(s) for +: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\rag\vector_store.py", line 101, in load_document
+    save_md5_hex(md5_hex)
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\rag\vector_store.py", line 59, in save_md5_hex
+    f.write(md5_for_check + '\n')
+            ~~~~~~~~~~~~~~^~~~~~
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+2026-03-20 15:44:08,680 - agent - ERROR - vector_store.py - 105 - [加载知识库] F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\维护保养.txt处理失败: unsupported operand type(s) for +: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\rag\vector_store.py", line 101, in load_document
+    save_md5_hex(md5_hex)
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\rag\vector_store.py", line 59, in save_md5_hex
+    f.write(md5_for_check + '\n')
+            ~~~~~~~~~~~~~~^~~~~~
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+2026-03-20 15:44:45,133 - agent - ERROR - vector_store.py - 105 - [加载知识库] F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\选购指南.txt处理失败: unsupported operand type(s) for +: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\rag\vector_store.py", line 101, in load_document
+    save_md5_hex(md5_hex)
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\rag\vector_store.py", line 59, in save_md5_hex
+    f.write(md5_for_check + '\n')
+            ~~~~~~~~~~~~~~^~~~~~
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+2026-03-20 15:45:19,104 - agent - ERROR - vector_store.py - 105 - [加载知识库] F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\扫地机器人100问.pdf处理失败: unsupported operand type(s) for +: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\rag\vector_store.py", line 101, in load_document
+    save_md5_hex(md5_hex)
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\rag\vector_store.py", line 59, in save_md5_hex
+    f.write(md5_for_check + '\n')
+            ~~~~~~~~~~~~~~^~~~~~
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+2026-03-20 15:45:56,256 - agent - ERROR - vector_store.py - 105 - [加载知识库] F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\扫地机器人100问2.txt处理失败: unsupported operand type(s) for +: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\rag\vector_store.py", line 101, in load_document
+    save_md5_hex(md5_hex)
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\rag\vector_store.py", line 59, in save_md5_hex
+    f.write(md5_for_check + '\n')
+            ~~~~~~~~~~~~~~^~~~~~
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+2026-03-20 15:46:32,571 - agent - ERROR - vector_store.py - 105 - [加载知识库] F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\扫拖一体机器人100问.txt处理失败: unsupported operand type(s) for +: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\rag\vector_store.py", line 101, in load_document
+    save_md5_hex(md5_hex)
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\rag\vector_store.py", line 59, in save_md5_hex
+    f.write(md5_for_check + '\n')
+            ~~~~~~~~~~~~~~^~~~~~
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+2026-03-20 15:47:52,100 - agent - ERROR - vector_store.py - 105 - [加载知识库] F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\故障排除.txt处理失败: unsupported operand type(s) for +: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\rag\vector_store.py", line 101, in load_document
+    save_md5_hex(md5_hex)
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\rag\vector_store.py", line 59, in save_md5_hex
+    f.write(md5_for_check + '\n')
+            ~~~~~~~~~~~~~~^~~~~~
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+2026-03-20 15:48:27,759 - agent - ERROR - vector_store.py - 105 - [加载知识库] F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\维护保养.txt处理失败: unsupported operand type(s) for +: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\rag\vector_store.py", line 101, in load_document
+    save_md5_hex(md5_hex)
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\rag\vector_store.py", line 59, in save_md5_hex
+    f.write(md5_for_check + '\n')
+            ~~~~~~~~~~~~~~^~~~~~
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+2026-03-20 15:49:05,365 - agent - ERROR - vector_store.py - 105 - [加载知识库] F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\选购指南.txt处理失败: unsupported operand type(s) for +: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\rag\vector_store.py", line 101, in load_document
+    save_md5_hex(md5_hex)
+  File "F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\rag\vector_store.py", line 59, in save_md5_hex
+    f.write(md5_for_check + '\n')
+            ~~~~~~~~~~~~~~^~~~~~
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+2026-03-20 15:50:41,531 - agent - INFO - vector_store.py - 102 - [加载知识库] F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\扫地机器人100问.pdf内容已成功载入向量库
+2026-03-20 15:51:12,771 - agent - INFO - vector_store.py - 102 - [加载知识库] F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\扫地机器人100问2.txt内容已成功载入向量库
+2026-03-20 15:51:52,694 - agent - INFO - vector_store.py - 102 - [加载知识库] F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\扫拖一体机器人100问.txt内容已成功载入向量库
+2026-03-20 15:52:35,472 - agent - INFO - vector_store.py - 102 - [加载知识库] F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\故障排除.txt内容已成功载入向量库
+2026-03-20 15:52:46,190 - agent - INFO - vector_store.py - 102 - [加载知识库] F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\维护保养.txt内容已成功载入向量库
+2026-03-20 15:52:55,765 - agent - INFO - vector_store.py - 102 - [加载知识库] F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\选购指南.txt内容已成功载入向量库
+2026-03-20 15:53:49,072 - agent - INFO - vector_store.py - 82 - [加载知识库] F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\扫地机器人100问.pdf内容已经存在知识库内， 跳过
+2026-03-20 15:53:49,073 - agent - INFO - vector_store.py - 82 - [加载知识库] F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\扫地机器人100问2.txt内容已经存在知识库内， 跳过
+2026-03-20 15:53:49,073 - agent - INFO - vector_store.py - 82 - [加载知识库] F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\扫拖一体机器人100问.txt内容已经存在知识库内， 跳过
+2026-03-20 15:53:49,074 - agent - INFO - vector_store.py - 82 - [加载知识库] F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\故障排除.txt内容已经存在知识库内， 跳过
+2026-03-20 15:53:49,074 - agent - INFO - vector_store.py - 82 - [加载知识库] F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\维护保养.txt内容已经存在知识库内， 跳过
+2026-03-20 15:53:49,075 - agent - INFO - vector_store.py - 82 - [加载知识库] F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\选购指南.txt内容已经存在知识库内， 跳过
