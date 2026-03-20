@@ -16,7 +16,7 @@ vector_store = Chroma(
 
 
 loader = CSVLoader(
-    file_path="./data/info.csv",
+    file_path="../data/info.csv",
     encoding="utf-8",
     source_column="source",
 

@@ -74,7 +74,7 @@ store = {}
 
 
 def get_history(session_id):
-    return FileChatMessageHistory(session_id, "./chat_history")
+    return FileChatMessageHistory(session_id, "../chat_history")
 
 
 # 创建一个新的链

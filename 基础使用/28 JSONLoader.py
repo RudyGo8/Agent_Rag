@@ -6,7 +6,7 @@
 from langchain_community.document_loaders import JSONLoader
 
 loader = JSONLoader(
-    file_path= "./data/stu.json",
+    file_path="../data/stu.json",
     jq_schema=".",
     text_content= False
 )

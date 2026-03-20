@@ -10,7 +10,7 @@ from langchain_community.document_loaders import CSVLoader
 vector_store = InMemoryVectorStore(embedding=DashScopeEmbeddings())
 
 loader = CSVLoader(
-    file_path="./data/info.csv",
+    file_path="../data/info.csv",
     encoding="utf-8",
     source_column="source",
 
