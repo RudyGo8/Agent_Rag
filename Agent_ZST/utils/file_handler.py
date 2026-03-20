@@ -28,6 +28,7 @@ def get_file_md5_hex(filepath: str):  # 获取文件的md5的十六进制字符�
         with open(filepath, 'rb') as f:
             while chunk := f.read(chunk_size):
                 md5_obj.update(chunk)
+        return md5_obj.hexdigest()
     except Exception as e:
         logger.error(f"[md5计算]文件{filepath}计算md5出错")
         logger.error(e)
@@ -47,9 +48,9 @@ def listdir_with_allowed_type(path: str, allowed_types: tuple[str]):  # 获取�
     return tuple(files)
 
 
-def pad_loader(filepath: str, passwd=None) -> list[Document]:  # 加载pad文件
+def pdf_loader(filepath: str, passwd=None) -> list[Document]:  # 加载pad文件
     return PyPDFLoader(filepath, passwd).load()
 
 
 def txt_loader(filepath: str) -> list[Document]:  # 加载txt文件
-    return TextLoader(filepath).load()
+    return TextLoader(filepath, encoding='utf-8').load()
