@@ -315,3 +315,4 @@ TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
 2026-03-20 15:53:49,074 - agent - INFO - vector_store.py - 82 - [加载知识库] F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\故障排除.txt内容已经存在知识库内， 跳过
 2026-03-20 15:53:49,074 - agent - INFO - vector_store.py - 82 - [加载知识库] F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\维护保养.txt内容已经存在知识库内， 跳过
 2026-03-20 15:53:49,075 - agent - INFO - vector_store.py - 82 - [加载知识库] F:\AI_Models\DEMO\Agent_rag1\Agent_ZST\data\选购指南.txt内容已经存在知识库内， 跳过
+2026-03-20 18:35:44,801 - agent - WARNING - agent_tools.py - 89 - <function fetch_external_data at 0x00000248779EE7A0>未能检索到用户：1234567890在January的使用记录数据
