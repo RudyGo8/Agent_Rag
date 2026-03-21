@@ -501,3 +501,22 @@ TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
 2026-03-20 20:35:54,333 - agent - INFO - middleware.py - 31 - [tool monitor]工具rag_summarize调用成功
 2026-03-20 20:35:55,021 - agent - INFO - middleware.py - 46 - [log_before_model]即将调用模型，带有17条消息
 2026-03-20 20:35:55,022 - agent - DEBUG - middleware.py - 47 - [log_before_model]ToolMessage | state['messages'][-1].content
+2026-03-20 21:46:36,839 - agent - INFO - middleware.py - 46 - [log_before_model]即将调用模型，带有1条消息
+2026-03-20 21:46:36,840 - agent - DEBUG - middleware.py - 47 - [log_before_model]HumanMessage | state['messages'][-1].content
+2026-03-20 21:46:40,470 - agent - INFO - middleware.py - 26 - [tool monitor]执行工具: get_user_location
+2026-03-20 21:46:40,471 - agent - INFO - middleware.py - 27 - [tool monitor]工具参数: {}
+2026-03-20 21:46:40,471 - agent - INFO - middleware.py - 31 - [tool monitor]工具get_user_location调用成功
+2026-03-20 21:46:40,505 - agent - INFO - middleware.py - 46 - [log_before_model]即将调用模型，带有3条消息
+2026-03-20 21:46:40,505 - agent - DEBUG - middleware.py - 47 - [log_before_model]ToolMessage | state['messages'][-1].content
+2026-03-20 21:46:44,415 - agent - INFO - middleware.py - 26 - [tool monitor]执行工具: get_weather
+2026-03-20 21:46:44,416 - agent - INFO - middleware.py - 27 - [tool monitor]工具参数: {'city': '北京'}
+2026-03-20 21:46:44,416 - agent - INFO - middleware.py - 31 - [tool monitor]工具get_weather调用成功
+2026-03-20 21:46:44,761 - agent - INFO - middleware.py - 46 - [log_before_model]即将调用模型，带有5条消息
+2026-03-20 21:46:44,761 - agent - DEBUG - middleware.py - 47 - [log_before_model]ToolMessage | state['messages'][-1].content
+2026-03-20 21:46:48,738 - agent - INFO - middleware.py - 26 - [tool monitor]执行工具: rag_summarize
+2026-03-20 21:46:48,739 - agent - INFO - middleware.py - 27 - [tool monitor]工具参数: {'query': '扫地机器人日常保养维护指南'}
+2026-03-20 21:46:53,464 - agent - INFO - middleware.py - 31 - [tool monitor]工具rag_summarize调用成功
+2026-03-20 21:46:54,588 - agent - INFO - middleware.py - 46 - [log_before_model]即将调用模型，带有7条消息
+2026-03-20 21:46:54,588 - agent - DEBUG - middleware.py - 47 - [log_before_model]ToolMessage | state['messages'][-1].content
+2026-03-20 21:47:35,153 - agent - INFO - middleware.py - 46 - [log_before_model]即将调用模型，带有1条消息
+2026-03-20 21:47:35,153 - agent - DEBUG - middleware.py - 47 - [log_before_model]HumanMessage | state['messages'][-1].content
